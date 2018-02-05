@@ -13,7 +13,7 @@ class JobsController < ApplicationController
     @company = Company.find(params[:company_id])
     @job = @company.jobs.new(job_params)
     if @job.save
-      flash[:success] = "You created #{@job.title} at #{@company.name}"
+      flash[:success] = "You created #{@job.title} at #{@company.name}."
       redirect_to company_job_path(@company, @job)
     else
       render :new
@@ -33,8 +33,12 @@ class JobsController < ApplicationController
     @company = Company.find(params[:company_id])
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      flash[:success] = "You updated #{@job.title} at #{@company.name}"
-      redirect_to company_job_path(@job)
+      flash[:success] = "You updated #{@job.title} at #{@company.name}."
+      redirect_to company_job_path(@company, @job)
+    else
+      flash[:failure] = "This job was not updated due to an error."
+      
+      redirect_to edit_company_job_path(@company, @job)
     end
   end
 

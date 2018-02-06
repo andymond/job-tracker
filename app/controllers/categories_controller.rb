@@ -23,6 +23,28 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash.notice = "#{@category.title} updated."
+      redirect_to(categories_path)
+    else
+      flash.notice = "#{@category.title} not updated due to an error."
+      render ":categories/edit"
+    end
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+
+    redirect_to categories_path
+  end
+
   private
 
   def category_params

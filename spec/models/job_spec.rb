@@ -34,11 +34,7 @@ describe Job do
   end
 
   describe "relationships" do
-    it "belongs to a company" do
-      category = Category.new(title: "Fishy")
-      job = Job.new(title: "fisherman", level_of_interest: 80, description: "Wahoo", city: "Denver", category_id: category.id)
-
-      expect(job).to respond_to(:company)
-    end
+    it {should belong_to(:company)}
+    it {should have_many(:comments)}
   end
 end

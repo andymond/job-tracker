@@ -8,8 +8,23 @@ describe "User sees one company" do
 
     visit company_path(company)
 
-    expect(current_path).to eq("/companies/#{company.id}/jobs")
+    expect(current_path).to eq("/companies/#{company.id}")
     expect(page).to have_content("ESPN")
     expect(page).to have_content("Developer")
+  end
+  it "allows user to add contact" do
+    skip
+    company = Company.create!(name: "ESPN")
+
+    visit company_path(company)
+    fill_in "contact[name]", with: "Seymore"
+    fill_in "contact[title]", with: "Janitor"
+    fill_in "contact[email]", with: "email@example.com"
+    click_on "Submit"
+
+    expect(current_path).to eq(company_path(company))
+    expect(page).to have_content("Seymore")
+    expect(page).to have_content("Janitor")
+    expect(page).to have_content("email@example.com")
   end
 end

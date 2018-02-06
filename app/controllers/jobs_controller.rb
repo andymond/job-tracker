@@ -37,13 +37,18 @@ class JobsController < ApplicationController
       redirect_to company_job_path(@company, @job)
     else
       flash[:failure] = "This job was not updated due to an error."
-      
+
       redirect_to edit_company_job_path(@company, @job)
     end
   end
 
   def destroy
-    # implement on your own!
+    @job = Job.find(params[:id])
+    @job.destroy
+
+    flash.notice = "#{@job.title} was deleted."
+
+    redirect_to company_jobs_path(@job.company)
   end
 
   private

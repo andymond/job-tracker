@@ -30,7 +30,7 @@ The rubric below describes additional functionality that you will need to add to
 
 ### Categories
 
-[ ] The user can create a new Category by filling out a form. Each Category has a title (e.g. “Web Development”, “Education”, “Finance”).
+[x] The user can create a new Category by filling out a form. Each Category has a title (e.g. “Web Development”, “Education”, “Finance”).
 
 [ ] When the user successfully creates a Category they are shown a page with the Category title.
 

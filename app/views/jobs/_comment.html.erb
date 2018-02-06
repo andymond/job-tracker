@@ -1,0 +1,5 @@
+<div class="job_comment">
+  <p> <%= comment.authorname %> commented at <%= comment.created_at.to_s(:rfc822).chomp("+0000") %>: </p>
+  <p> <%= comment.body %></p>
+  <p> comment was last updated on <%= comment.updated_at.to_s(:rfc822).chomp("+0000") %></p>
+</div>

@@ -13,7 +13,6 @@ describe "User sees one company" do
     expect(page).to have_content("Developer")
   end
   it "allows user to add contact" do
-    skip
     company = Company.create!(name: "ESPN")
 
     visit company_path(company)

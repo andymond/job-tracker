@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
+    @jobs = Job.where(category_id: params[:id])
   end
 
   def edit

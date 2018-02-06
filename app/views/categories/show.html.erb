@@ -1,1 +1,7 @@
 <h1>Viewing '<%= @category.title %>' Category</h1>
+
+<% @jobs.each do |job| %>
+ <div>
+   <p><%= link_to job.title, company_job_path(job.company, job) %></p>
+ </div>
+<% end %>

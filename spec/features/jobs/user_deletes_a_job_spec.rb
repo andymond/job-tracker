@@ -3,7 +3,8 @@ require "rails_helper"
 describe "User can delete a job" do
   it "allows user to delete a job" do
     company = Company.create!(name: "ESPN")
-    job = company.jobs.create(title: "Cool job", level_of_interest: 80, description: "Wahoo", city: "Denver")
+    category = Category.create(title: "Much Sportnstuf")
+    job = company.jobs.create(title: "Cool job", level_of_interest: 80, description: "Wahoo", city: "Denver", category_id: category.id)
 
     visit company_job_path(company, job)
     click_on "Delete"

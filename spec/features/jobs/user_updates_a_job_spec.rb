@@ -3,7 +3,8 @@ require "rails_helper"
 describe "User navigates to edit job" do
   it "allows user to update job" do
     company = Company.create!(name: "ESPN")
-    job = company.jobs.create(title: "Cool job", level_of_interest: 80, description: "Wahoo", city: "Denver")
+    category = Category.create(title: "Much Sportnstuf")
+    job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver", category_id: category.id)
 
     visit edit_company_job_path(company, job)
     fill_in "job[title]", with: "Even cooler job"
@@ -21,7 +22,8 @@ describe "User navigates to edit job" do
 
   it "doesn't allow user to omit title from job" do
     company = Company.create!(name: "ESPN")
-    job = company.jobs.create(title: "Cool job", level_of_interest: 80, description: "Wahoo", city: "Denver")
+    category = Category.create(title: "Much Sportnstuf")
+    job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver", category_id: category.id)
 
     visit edit_company_job_path(company, job)
     fill_in "job[title]", with: ""

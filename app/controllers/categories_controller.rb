@@ -29,12 +29,13 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
+    category_name = @category.title
     if @category.update(category_params)
-      flash.notice = "#{@category.title} updated."
-      redirect_to(categories_path)
+      flash.notice = "'#{@category.title}' updated."
+      redirect_to categories_path
     else
-      flash.notice = "#{@category.title} not updated due to an error."
-      render ":categories/edit"
+      flash.notice = "'#{category_name}' not updated due to an error."
+      redirect_to edit_category_path(@category)
     end
   end
 

@@ -7,8 +7,8 @@ describe "User can create new category" do
     fill_in "category[title]", with: "Cool Beans"
     click_on "Create Category"
 
-    expect(current_path).to eq(categories_path)
     expect(page).to have_content("'Cool Beans' was created.")
+    expect(page).to have_content("Viewing 'Cool Beans' Category")
   end
 
   it "Doesn't allow user to create category without title" do

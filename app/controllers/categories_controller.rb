@@ -12,11 +12,15 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     if @category.save
       flash.notice = "'#{@category.title}' was created."
-      redirect_to categories_path
+      redirect_to category_path(@category)
     else
       flash.notice = "Failed to create category due to an error."
       render :"categories/new"
     end
+  end
+
+  def show
+    @category = Category.find(params[:id])
   end
 
   private

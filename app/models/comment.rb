@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  validates :author, :body, presence: true
+  validates :authorname, :body, presence: true
   belongs_to :job
 end

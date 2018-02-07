@@ -20,7 +20,8 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    redirect_to company_jobs_path(@company)
+    @contact = Contact.new
+    @contact.company_id = @company.id
   end
 
   def edit

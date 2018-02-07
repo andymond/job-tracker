@@ -1,0 +1,12 @@
+<% @companies.first(3).each_with_index do |company, index| %>
+  <div class="top-3-companies">
+    <p>This is your #<%= index + 1 %> company!</p>
+    <p>You are on average <%= company.jobs.average(:level_of_interest) %>% interested in jobs at <%= company.name %></p>
+  </div>
+<% end %>
+
+<% @jobs.each do |loi, count| %>
+  <div class="loi_dashboard">
+    You are <%= loi %>% interested in <%= count %> jobs.
+  </div>
+<% end %>

@@ -62,7 +62,7 @@ The rubric below describes additional functionality that you will need to add to
 
 ### Analysis
 
-[ ] The user can visit `/jobs?sort=location` to view a list of the jobs sorted by `city`.
+[x] The user can visit `/jobs?sort=location` to view a list of the jobs sorted by `city`.
 
 [ ] The user can visit `/dashboard` to see
 

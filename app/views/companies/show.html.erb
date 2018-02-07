@@ -4,4 +4,5 @@ All Jobs for <strong><%= @company.name %></strong>
   <ul><%= job.title %></ul>
 <% end %>
 
+<%= render partial: 'companies/contact', collection: @company.contacts.order('lower(name)') %>
 <%= render partial: 'contacts/form' %>

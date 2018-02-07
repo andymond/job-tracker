@@ -64,11 +64,11 @@ The rubric below describes additional functionality that you will need to add to
 
 [x] The user can visit `/jobs?sort=location` to view a list of the jobs sorted by `city`.
 
-[ ] The user can visit `/dashboard` to see
+[] The user can visit `/dashboard` to see
 
-    [] A count of jobs by `level_of_interest`
+    [x] A count of jobs by `level_of_interest`
 
-    [] The top three companies ranked by average level of interest along with their respective average level of interest.
+    [x] The top three companies ranked by average level of interest along with their respective average level of interest.
 
     [] A count of jobs by `location` with a link to visit a page with jobs only in that location. The url should be `/jobs?location=Denver`.
 
@@ -76,9 +76,9 @@ The rubric below describes additional functionality that you will need to add to
 
 ### Databases
 
-[ ] The database has appropriate tables and columns to create relationships between tables
+[x] The database has appropriate tables and columns to create relationships between tables
 
-[ ] Table and column names follow convention
+[x] Table and column names follow convention
 
 ### Routes
 

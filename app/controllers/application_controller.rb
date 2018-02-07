@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def dashboard
-    @jobs = Job.group_by_LOI
+    @jobs_by_interest = Job.group_by_LOI
+    #@jobs_by_location = Job.group_by_location
     @companies = Company.average_level_of_interest
   end
 

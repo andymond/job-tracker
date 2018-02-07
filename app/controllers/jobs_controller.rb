@@ -7,6 +7,8 @@ class JobsController < ApplicationController
       @jobs = @company.jobs
     elsif params[:sort] == "location"
       @jobs = Job.sort_by_location
+    # elsif !params[:location].nil?
+    #   @jobs = Job.sort_by_location(params[:location])
     else
       @jobs = Job.all
     end

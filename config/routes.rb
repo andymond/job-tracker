@@ -9,9 +9,12 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  get "/jobs", to: 'jobs#index'
-
   resources :categories
+
+  get "/jobs", to: 'jobs#index'
+  get "/dashboard", to: 'application#dashboard'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

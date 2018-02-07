@@ -1,5 +1,9 @@
-All Jobs for <strong><%= @company.name %></strong>
+<% unless @company.nil? %>
+  All Jobs for <strong><%= @company.name %></strong>
+<% else %>
+  Viewing All Jobs
+<% end %>
 
 <% @jobs.each do |job| %>
-  <ul><%= job.title %> at <%= job.company.name %></ul>
+  <ul><%= job.title %> at <%= job.company.name %> in <%= job.city %></ul>
 <% end %>

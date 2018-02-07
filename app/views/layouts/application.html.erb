@@ -3,10 +3,26 @@
 <head>
   <title>JobTracker</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>Job Tracker</h1>
+  <nav>
+    <div id="companies" class="dropdown">
+      <p>companies</p>
+        <div class="dropdown-content">
+           <%= link_to "Companies Index", companies_path %>
+        </div>
+    </div>
+    <div id="categories" class="dropdown">
+      <p>categories</p>
+        <div class="dropdown-content">
+           <%= link_to "Categories Index", categories_path %>
+        </div>
+    </div>
+  </nav>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
   <% end %>

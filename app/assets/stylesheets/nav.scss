@@ -1,0 +1,15 @@
+nav {
+  width: 100%;
+  margin: 10px;
+  background-color: #e8c5d8;
+  display: flex;
+  div.dropdown {
+    margin: 0px 15px;
+    p {
+      margin-bottom: 0px;
+    }
+    div.dropdown-content {
+      position: absolute;
+    }
+  }
+}

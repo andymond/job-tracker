@@ -1,7 +1,7 @@
-<h1>Viewing '<%= @category.title %>' Category</h1>
 <%= link_to categories_path do %>
-  <h4>To All Categories</h4>
+  <h1>All Categories</h1>
 <% end %>
+<h4>Viewing '<%= @category.title %>' Category</h4>
 
 <section class="list">
   <% @jobs.each do |job| %>

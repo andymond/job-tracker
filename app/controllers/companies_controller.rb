@@ -2,7 +2,11 @@ class CompaniesController < ApplicationController
   before_action :set_company, except: [:index, :new, :create]
 
   def index
-    @companies = Company.all
+    if params[:sort] == "interest"
+      @companies = Company.average_level_of_interest
+    else
+      @companies = Company.all
+    end
   end
 
   def new

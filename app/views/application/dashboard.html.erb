@@ -7,6 +7,14 @@
   <% end %>
 </section>
 
+<section class="num-jobs-location">
+  <% @jobs_per_location.each do |city, count| %>
+    <div class="city_count">
+      You are tracking <%= count %> jobs in <%= link_to city, "/jobs?location=#{city}" %>
+    </div>
+  <% end %>
+</section>
+
 <section class="loi-list">
   <% @jobs_by_interest.each do |loi, count| %>
     <div class="loi-item">

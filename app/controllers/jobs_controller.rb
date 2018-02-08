@@ -6,9 +6,11 @@ class JobsController < ApplicationController
     if !@company.nil?
       @jobs = @company.jobs
     elsif params[:sort] == "location"
-      @jobs = Job.sort_by_location
-    # elsif !params[:location].nil?
-    #   @jobs = Job.sort_by_location(params[:location])
+      @jobs = Job.order(:city)
+    elsif params[:sort] == "interest"
+      @jobs = Job.order(:level_of_interest)
+    elsif !params[:location].nil?
+      @jobs = Job.where(city: params[:location])
     else
       @jobs = Job.all
     end

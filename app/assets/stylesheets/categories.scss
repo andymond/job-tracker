@@ -1,5 +1,6 @@
 .index_category {
-  width: 15%;
+  width: 20%;
+  min-width: 187px;
   height: 100px;
   margin: 30px;
   padding: 30px;
@@ -7,4 +8,9 @@
   font-size: 24px;
   text-align: center;
   border: 1px gray dotted;
+}
+
+.index_category:hover {
+  transform: scale(1.1, 1.1);
+  .cn-index {color:#fc7871}
 }

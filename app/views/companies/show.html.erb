@@ -1,8 +1,9 @@
-All Jobs for <strong><%= @company.name %></strong>
+<h1>All Jobs for <strong><%= @company.name %></strong></h1>
 
-<% @company.jobs.each do |job| %>
-  <ul><%= job.title %></ul>
-<% end %>
-
-<%= render partial: 'companies/contact', collection: @company.contacts.order('lower(name)') %>
-<%= render partial: 'contacts/form' %>
+<section class="show">
+  <% @company.jobs.each do |job| %>
+    <%= link_to job.title, job_path(job) %>
+  <% end %>
+  <%= render partial: 'companies/contact', collection: @company.contacts.order('lower(name)') %>
+  <%= render partial: 'contacts/form' %>
+</section>

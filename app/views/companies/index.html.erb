@@ -1,6 +1,6 @@
 <h3>All Companies</h3>
 
-<section class = "company_list">
+<section class = "list">
   <% @companies.each do |company| %>
   <div id="company_<%= company.id %>" class="index_company">
     <%= link_to company.name, company_path(company) %>

@@ -1,20 +1,23 @@
 <% unless @company.nil? %>
   <h1>All Jobs for <strong><%= @company.name %></strong></h1>
+  <%= link_to "Create New Job at this Company", new_company_job_path(@company) %><br>
 <% else %>
-  <h1>All Jobs</h1>
+  <%= link_to jobs_path do %>
+    <h1>All Jobs</h1>
+  <% end %>
 <% end %>
-<div class="job_cities">
+<div class="job-cities">
   <% @cities.each do |city| %>
     <%= link_to city, "/jobs?location=#{city}" %>
   <% end %>
 </div>
 <section class="list">
   <% @jobs.each do |job| %>
-    <%= link_to(job_path(job), html_options = {class: "index_job"}) do %>
+    <%= link_to(job_path(job), html_options = {class: "index-job"}) do %>
       <div>
-        <div class="job_name"><%= job.title %> </div>
-        <div class="company_name"><%= job.company.name %></div>
-        <div class="job_city"><%= job.city %></div>
+        <div class="job-name"><%= job.title %> </div>
+        <div class="company-name"><%= job.company.name %></div>
+        <div class="job-city"><%= job.city %></div>
       </div>
     <% end %>
   <% end %>

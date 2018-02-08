@@ -3,7 +3,7 @@
 <section class = "list">
   <% @companies.each do |company| %>
   <div id="company_<%= company.id %>" class="index_company">
-    <%= link_to company.name, company_path(company), class: "cn-index" %>
+    <%= link_to company.name, company_jobs_path(company), class: "cn-index" %>
     <div class="modify">
       <%= link_to "Edit", edit_company_path(company) %>
       <%= link_to "Delete", company_path(company), method: "delete" %>

@@ -21,6 +21,16 @@
    overflow: hidden;
 }
 
+.num-jobs-location {
+  display: block;
+  background-color: ivory;
+  border: 1px dotted black;
+  width: 70%;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
 .loi-list {
   display: block;
   background-color: ivory;

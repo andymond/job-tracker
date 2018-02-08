@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def dashboard
     @jobs_by_interest = Job.group_by_LOI
-    #@jobs_by_location = Job.group_by_location
+    @jobs_per_location = Job.jobs_per_location
     @companies = Company.average_level_of_interest
   end
 

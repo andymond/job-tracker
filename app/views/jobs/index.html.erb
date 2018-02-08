@@ -3,7 +3,14 @@
 <% else %>
   Viewing All Jobs
 <% end %>
-
-<% @jobs.each do |job| %>
-  <ul><%= job.title %> at <%= job.company.name %> in <%= job.city %></ul>
-<% end %>
+<section class="list">
+  <% @jobs.each do |job| %>
+    <%= link_to(job_path(job), html_options = {class: "index_job"}) do %>
+      <div>
+        <div class="job_name"><%= job.title %> </div>
+        <div class="company_name"><%= job.company.name %></div>
+        <div class="job_city"><%= job.city %></div>
+      </div>
+    <% end %>
+  <% end %>
+</section>

@@ -1,9 +1,13 @@
 <h1>All Categories</h1>
 
-<% @categories.each do |category| %>
-  <div>
-    <%= link_to category.title, category_path(category) %>
-    <%= link_to "Edit Category", edit_category_path(category), id: "edit_#{category.title}" %>
-    <%= link_to "Delete Category", category_path(category), id: "delete_#{category.title}", method: :delete, data: {confirm: "Are you sure you want to delete #{category.title?}"} %>
-  </div>
-  <% end %>
+<section class="list">
+  <% @categories.each do |category| %>
+    <div class="index_category">
+      <%= link_to category.title, category_path(category) %>
+      <div class="modify">
+        <%= link_to "Edit Category", edit_category_path(category), id: "edit_#{category.title}" %>
+        <%= link_to "Delete Category", category_path(category), id: "delete_#{category.title}", method: :delete, data: {confirm: "Are you sure you want to delete #{category.title?}"} %>
+      </div>
+    </div>
+    <% end %>
+</section>

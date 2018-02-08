@@ -1,0 +1,28 @@
+.index_job {
+  width: 150px;
+  height: 100px;
+  margin: 30px;
+  padding: 15px;
+  background-color: #baefe8;
+  font-size: 24px;
+  text-align: center;
+  border: 1px gray dotted;
+  a {text-decoration: none;}
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  .company_name {
+    font-size: 16px;
+  }
+  .job_city {
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+
+.index_job:hover {
+  transform: scale(1.1, 1.1);
+  .company_name {color: black;}
+  .job_city {color: black;}
+  }

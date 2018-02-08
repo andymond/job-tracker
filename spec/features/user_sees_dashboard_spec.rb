@@ -14,8 +14,6 @@ describe "User visits dashboard" do
     expect(page).to have_content("You are 80% interested in 2 jobs.")
     expect(page).to have_content("You are 70% interested in 1 jobs.")
     expect(page).to have_content("You are 60% interested in 1 jobs.")
-    # expect(page).to have_content("You are on average 65% interested in jobs at ESPN")
-    # expect(page).to have_content("You are on average 85% interested in jobs at ESPX")
   end
   it "displays a list of top 3 companies by avg interest" do
     company = Company.create!(name: "ESPN")
@@ -28,13 +26,13 @@ describe "User visits dashboard" do
     company_2.jobs.create!(title: "Intern", level_of_interest: 80, city: "Boston", category_id: category.id)
     company_2.jobs.create!(title: "Intern", level_of_interest: 80, city: "Boston", category_id: category.id)
     company_3.jobs.create!(title: "Intern", level_of_interest: 10, city: "Boston", category_id: category.id)
-    company_4.jobs.create!(title: "Intern", level_of_interest: 10, city: "Boston", category_id: category.id)
+    company_4.jobs.create!(title: "Intern", level_of_interest: 5, city: "Boston", category_id: category.id)
 
     visit dashboard_path
 
-    expect(page).to have_content("You are on average 65.0% interested in jobs at ESPN")
-    expect(page).to have_content("You are on average 80.0% interested in jobs at ESPX")
-    expect(page).to have_content("You are on average 10.0% interested in jobs at ESPZ")
-    expect(page).to_not have_content("You are on average 5.0% interested in jobs at ESPQ")
+    expect(page).to have_content("ESPN is your #2 company! You are on average 65.0% interested in jobs here.")
+    expect(page).to have_content("ESPX is your #1 company! You are on average 80.0% interested in jobs here.")
+    expect(page).to have_content("ESPZ is your #3 company! You are on average 10.0% interested in jobs here.")
+    expect(page).to_not have_content("You are on average 5.0% interested in jobs here.")
   end
 end

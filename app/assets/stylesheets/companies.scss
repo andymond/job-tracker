@@ -1,0 +1,21 @@
+.index_company {
+  width: 22%;
+  height: 100px;
+  margin: 30px;
+  padding: 30px;
+  background-color: ivory;
+  font-size: 24px;
+  text-align: center;
+  border: 1px gray dotted;
+  a {text-decoration: none;}
+}
+
+.modify {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  a {
+    font-size: 12px;
+    margin: 20px;
+  }
+}

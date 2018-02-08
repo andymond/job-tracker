@@ -1,0 +1,18 @@
+.show {
+  width: 100vw;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  div {
+    margin: 10px;
+  }
+  h1 {
+    margin-left: 15px;
+  }
+  .job_comment {
+    border-bottom: 1px black dotted;
+  }
+  .posted_comments {
+    border: 1px black dotted;
+  }
+}

@@ -15,21 +15,22 @@
         <p>Companies</p>
           <div class="dropdown-content">
              <%= link_to "Companies Index", companies_path %>
-             <%= link_to "Find a company" %>
+             <%= link_to "Sort Companies by Interest", '/companies?sort=interest'  %>
           </div>
       </div>
       <div id="categories" class="dropdown">
         <p>Categories</p>
           <div class="dropdown-content">
              <%= link_to "Categories Index", categories_path %>
-             <%= link_to "Find a Category", categories_path %>
+             <%= link_to "Sort Categories Alphbetically", '/categories?sort=abc' %>
           </div>
       </div>
       <div id="jobs" class="dropdown">
         <p>Jobs</p>
           <div class="dropdown-content">
              <%= link_to "Jobs Index", jobs_path %>
-             <%= link_to "Find a Job", jobs_path %>
+             <%= link_to "Sort Jobs by Interest", "/jobs?sort=interest" %>
+             <%= link_to "Sort Jobs by Location", "/jobs?sort=location" %>
           </div>
       </div>
     </div>

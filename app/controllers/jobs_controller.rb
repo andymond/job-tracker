@@ -3,7 +3,15 @@ class JobsController < ApplicationController
   before_action :set_job, except: [:index, :new, :create]
 
   def index
-    @jobs = @company.jobs
+    if !@company.nil?
+      @jobs = @company.jobs
+    elsif params[:sort] == "location"
+      @jobs = Job.sort_by_location
+    # elsif !params[:location].nil?
+    #   @jobs = Job.sort_by_location(params[:location])
+    else
+      @jobs = Job.all
+    end
   end
 
   def new
@@ -60,6 +68,6 @@ class JobsController < ApplicationController
   end
 
   def set_company
-    @company = Company.find(params[:company_id])
+    @company = Company.find(params[:company_id]) unless params[:company_id].nil?
   end
 end

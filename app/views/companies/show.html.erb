@@ -1,8 +1,14 @@
 <h1>All Jobs for <strong><%= @company.name %></strong></h1>
+<%= link_to "Create New Job at this Company", new_company_job_path(@company) %>
 
-<section class="show">
+<section class="list">
   <% @company.jobs.each do |job| %>
+  <div class="index_company">
     <%= link_to job.title, job_path(job) %>
+    <div class="company_job_city">
+      <%= link_to job.city, "/jobs?location=#{job.city}"%>
+    </div>
+  </div>
   <% end %>
   <%= render partial: 'companies/contact', collection: @company.contacts.order('lower(name)') %>
   <%= render partial: 'contacts/form' %>

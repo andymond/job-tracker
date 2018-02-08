@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :categories
 
   get "/jobs", to: 'jobs#index'
+  root to: 'application#dashboard'
   get "/dashboard", to: 'application#dashboard'
 
 

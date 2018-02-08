@@ -3,6 +3,7 @@ class JobsController < ApplicationController
   before_action :set_job, except: [:index, :new, :create]
 
   def index
+    @cities = Job.group('city').count.keys
     if !@company.nil?
       @jobs = @company.jobs
     elsif params[:sort] == "location"

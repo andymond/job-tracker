@@ -14,6 +14,7 @@
 .top-3-company {
    text-align: center;
    border: 1px dotted black;
+   background-color: #ceffee;
    padding: 20px;
    margin: 10px;
    width: 27%;
@@ -21,12 +22,17 @@
    overflow: hidden;
 }
 
+.top-3-company:hover {
+  transform: scale(1.05, 1.05);
+  .dashboard_average { color: black; }
+}
 .num-jobs-location {
+  h4 {margin-top: 0}
   display: block;
   background-color: ivory;
   border: 1px dotted black;
   width: 70%;
-  padding: 20px;
+  padding: 10px;
   margin: 20px;
   text-align: center;
 }
@@ -36,9 +42,13 @@
   background-color: ivory;
   border: 1px dotted black;
   width: 70%;
-  height: 150px;
-  overflow: scroll;
   padding: 20px;
   margin: 20px;
   text-align: center;
+}
+
+.loi-item {
+  margin-top: 7px;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted black;
 }

@@ -1,9 +1,14 @@
-.index_job {
+.job-cities {
+  display: flex;
+  a { margin: 15px; }
+}
+
+.index-job {
   width: 150px;
   height: 100px;
   margin: 30px;
   padding: 15px;
-  background-color: #baefe8;
+  background-color: #afceff;
   font-size: 24px;
   text-align: center;
   border: 1px gray dotted;
@@ -12,17 +17,31 @@
   flex-direction: column;
   text-align: center;
   justify-content: space-around;
-  .company_name {
+  .company-name {
     font-size: 16px;
   }
-  .job_city {
+  .job-city {
     font-size: 14px;
     font-style: italic;
   }
 }
 
-.index_job:hover {
+.index-job:hover {
   transform: scale(1.1, 1.1);
-  .company_name {color: black;}
-  .job_city {color: black;}
+  .company-name {color: black;}
+  .job-city {color: black;}
   }
+
+.new-job {
+  label {
+    display: block;
+  }
+  input, select{
+    margin-bottom: 10px;
+  }
+  height: 300px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

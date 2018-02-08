@@ -1,9 +1,8 @@
 <h1>All Jobs for <strong><%= @company.name %></strong></h1>
 <%= link_to "Create New Job at this Company", new_company_job_path(@company) %>
-
 <section class="list">
   <% @company.jobs.each do |job| %>
-  <div class="index_company">
+  <div class="index-job">
     <%= link_to job.title, job_path(job) %>
     <div class="company_job_city">
       <%= link_to job.city, "/jobs?location=#{job.city}"%>
